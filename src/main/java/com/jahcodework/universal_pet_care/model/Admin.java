@@ -1,8 +1,6 @@
 package com.jahcodework.universal_pet_care.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +16,7 @@ import lombok.Setter;
 public class Admin extends User{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
     private long id;
 
 
