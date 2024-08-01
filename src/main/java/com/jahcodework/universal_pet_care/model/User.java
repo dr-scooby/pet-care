@@ -1,12 +1,27 @@
 package com.jahcodework.universal_pet_care.model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
+    @Id
     private long id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String gender;
-    private String phonenumber;
+    @Column(name="mobile")
+    private String phoneNumber;
+    @Column(unique = true)
     private String email;
     private String password;
     private String userType;
