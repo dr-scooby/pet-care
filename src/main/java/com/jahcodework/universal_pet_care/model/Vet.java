@@ -1,16 +1,23 @@
 package com.jahcodework.universal_pet_care.model;
 // the veterinarian , the doctor
-public class Vet {
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@PrimaryKeyJoinColumn(name="vet_id")
+public class Vet extends User{
 
     private long id;
-    private String firstname;
-    private String lastname;
-    private String gender;
-    private String phonenumber;
-    private String email;
-    private String password;
-    private String userType;
-    private boolean isEnabled; // is user active
+
     private String specialization;
 
 
