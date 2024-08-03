@@ -17,7 +17,7 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name="patient_id")
 public class Patient extends User {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
+    //@GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
     private long id;
 
 }

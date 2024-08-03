@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Admin extends User{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
+    //@GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
     private long id;
 
 
