@@ -8,6 +8,10 @@ import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+/**
+ * this is not a factory design patter, only a simulation, just a mimick.
+ */
+
 @Component
 @RequiredArgsConstructor
 public class SimpleUserFactory implements UserFactory{
