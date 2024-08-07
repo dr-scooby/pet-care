@@ -27,4 +27,7 @@ public class User {
     private String password;
     private String userType;
     private boolean isEnabled; // is user active
+
+    @Transient
+    private String specialization; // for Vet only, do not save to user table, use Transient for this.
 }
