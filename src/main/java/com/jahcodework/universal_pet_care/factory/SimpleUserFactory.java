@@ -20,6 +20,13 @@ public class SimpleUserFactory implements UserFactory{
             throw new UserAlreadyExistsException("oops! " + rr.getEmail() + " already exists");
         }
 
+        switch (rr.getUserType()){
+
+            case "VET" -> {return  vetfactory.createVet(rr); }
+
+            case "PATIENT" -> {return patfactory.createPatient(rr); }
+
+        }
 
         return null;
     }
