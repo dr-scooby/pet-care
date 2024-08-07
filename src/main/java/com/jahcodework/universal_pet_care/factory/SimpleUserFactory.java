@@ -5,13 +5,15 @@ import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.UserRepo;
 import com.jahcodework.universal_pet_care.repository.VetRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class SimpleUserFactory implements UserFactory{
 
-    private UserRepo userrepo;
-    private VetFactory vetfactory;
-    private PatientFactory patfactory;
-    private AdminFactory adminfactory;
+    private final UserRepo userrepo;
+    private final VetFactory vetfactory;
+    private final PatientFactory patfactory;
+    private final AdminFactory adminfactory;
 
     @Override
     public User createUser(RegistrationRequest rr) {
