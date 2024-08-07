@@ -26,6 +26,8 @@ public class SimpleUserFactory implements UserFactory{
 
             case "PATIENT" -> {return patfactory.createPatient(rr); }
 
+            case "ADMIN" -> {return adminfactory.createAdmin(rr); }
+
         }
 
         return null;
