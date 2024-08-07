@@ -6,7 +6,9 @@ import com.jahcodework.universal_pet_care.repository.UserRepo;
 import com.jahcodework.universal_pet_care.repository.VetRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor
 public class SimpleUserFactory implements UserFactory{
 
