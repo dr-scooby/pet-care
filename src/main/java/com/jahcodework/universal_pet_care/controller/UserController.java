@@ -1,7 +1,7 @@
 package com.jahcodework.universal_pet_care.controller;
 
 import com.jahcodework.universal_pet_care.model.User;
-import com.jahcodework.universal_pet_care.service.UserService;
+import com.jahcodework.universal_pet_care.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

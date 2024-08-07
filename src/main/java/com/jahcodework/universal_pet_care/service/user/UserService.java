@@ -1,4 +1,4 @@
-package com.jahcodework.universal_pet_care.service;
+package com.jahcodework.universal_pet_care.service.user;
 
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.UserRepo;
