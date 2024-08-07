@@ -28,8 +28,11 @@ public class SimpleUserFactory implements UserFactory{
 
             case "ADMIN" -> {return adminfactory.createAdmin(rr); }
 
+            default -> {
+                return null;
+            }
         }
 
-        return null;
+
     }
 }
