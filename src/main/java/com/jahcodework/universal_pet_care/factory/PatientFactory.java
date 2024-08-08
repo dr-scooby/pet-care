@@ -7,5 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PatientFactory {
     public User createPatient(RegistrationRequest rr) {
+
+        return null;
     }
 }

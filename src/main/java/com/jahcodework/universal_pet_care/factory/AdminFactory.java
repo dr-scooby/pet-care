@@ -7,5 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminFactory {
     public User createAdmin(RegistrationRequest rr) {
+        return null;
     }
 }
