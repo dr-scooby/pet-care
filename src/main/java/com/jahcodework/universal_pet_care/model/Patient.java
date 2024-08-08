@@ -4,11 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.PrimaryKeyJoinColumn;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@ToString
 @Getter
 @Setter
 @Entity
@@ -19,5 +17,6 @@ public class Patient extends User {
 
     //@GeneratedValue(strategy = GenerationType.IDENTITY) // not really needed here
     private long id;
+
 
 }
