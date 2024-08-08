@@ -21,5 +21,7 @@ public class VetFactory {
         Vet veter = new Vet();
         userattrmapper.setCommonAttributes(rr, veter);
         veter.setSpecialization(rr.getSpecialization());
+
+        return vetrepo.save(veter);
     }
 }
