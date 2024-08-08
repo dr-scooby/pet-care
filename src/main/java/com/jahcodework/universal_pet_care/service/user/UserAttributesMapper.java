@@ -2,7 +2,9 @@ package com.jahcodework.universal_pet_care.service.user;
 
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserAttributesMapper {
 
     // RegistrationRequest source is the data incoming

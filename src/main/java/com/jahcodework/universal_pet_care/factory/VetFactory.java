@@ -1,6 +1,7 @@
 package com.jahcodework.universal_pet_care.factory;
 
 import com.jahcodework.universal_pet_care.model.User;
+import com.jahcodework.universal_pet_care.model.Vet;
 import com.jahcodework.universal_pet_care.repository.VetRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import com.jahcodework.universal_pet_care.service.user.UserAttributesMapper;
@@ -17,7 +18,8 @@ public class VetFactory {
 
     public User createVet(RegistrationRequest rr) {
 
-
-
+        Vet veter = new Vet();
+        userattrmapper.setCommonAttributes(rr, veter);
+        veter.setSpecialization(rr.getSpecialization());
     }
 }
