@@ -21,7 +21,7 @@ public class PatientFactory {
         Patient patient = new Patient();
         userattrmapper.setCommonAttributes(rr, patient);
 
-        System.out.println("new Patient:: " + patient);
+        //System.out.println("new Patient:: " + patient + " " + patient.getFirstName() + " " + patient.getEmail());
 
         return pat.save(patient);
     }
