@@ -10,14 +10,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// localhost:9192/pet-care
 @RequiredArgsConstructor
-@RequestMapping("/users")
+@RequestMapping("/pet-care")
 @RestController
 public class UserController {
     private final UserService userService;
 
 
-    @PostMapping
+
+
+    // localhost:9192/pet-care/addUser
+    @PostMapping("/addUser")
+    public void add(@RequestBody User auser){
+        System.out.println("\n\n" + "User received: " + auser.toString() + "\n\n");
+        userService.add(auser);
+    }
+
+
+   /* @PostMapping
     public ResponseEntity<ApiResponse> add(@RequestBody RegistrationRequest request){
 
         try{
@@ -25,7 +36,7 @@ public class UserController {
         }catch(Exception e){
 
         }
-    }
+    }*/
     /* public User add(@RequestBody RegistrationRequest request){
 
        return userService.add(request);

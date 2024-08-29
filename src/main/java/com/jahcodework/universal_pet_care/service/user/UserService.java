@@ -22,4 +22,9 @@ public class UserService {
        return userfactory.createUser(register);
 
     }
+
+    public void add(User auser){
+        userrepo.save(auser);
+
+    }
 }

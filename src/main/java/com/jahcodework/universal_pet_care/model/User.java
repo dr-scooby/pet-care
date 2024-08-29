@@ -18,6 +18,7 @@ Used when you have a superclass that contains common properties that need to be 
 multiple subclasses, but the superclass itself is not a persistent entity(Not a table) in the DB.
 
  */
+
 @Getter
 @Setter
 @Entity // create as a table in the DB
@@ -42,4 +43,14 @@ public class User {
 
     @Transient
     private String specialization; // for Vet only, do not save to user table, use Transient for this.
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
