@@ -8,7 +8,7 @@ import lombok.Setter;
 
 /*
  @MappedSuperclass:
-  in hibernate this annotation is actually used to to define a class as a superclass.
+  in hibernate this annotation is actually used to define a class as a superclass.
 
 But this class is not a persistent entity.
 
