@@ -12,7 +12,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity // create as a table in the DB
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name="vet_id")

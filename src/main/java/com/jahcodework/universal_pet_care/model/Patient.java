@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Getter
 @Setter
-@Entity
+@Entity // create as a table in the DB
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name="patient_id")
