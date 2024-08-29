@@ -20,7 +20,7 @@ multiple subclasses, but the superclass itself is not a persistent entity(Not a 
  */
 @Getter
 @Setter
-@Entity
+@Entity // create as a table in the DB
 @AllArgsConstructor
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
