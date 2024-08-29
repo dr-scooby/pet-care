@@ -6,6 +6,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/*
+ @MappedSuperclass:
+  in hibernate this annotation is actually used to to define a class as a superclass.
+
+But this class is not a persistent entity.
+
+It just holds properties that are mapped to subclasses.
+
+Used when you have a superclass that contains common properties that need to be shared among
+multiple subclasses, but the superclass itself is not a persistent entity(Not a table) in the DB.
+
+ */
 @Getter
 @Setter
 @Entity
