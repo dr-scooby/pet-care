@@ -37,8 +37,10 @@ public class UserController {
 
         }
     }*/
-    /* public User add(@RequestBody RegistrationRequest request){
+   @PostMapping("/addAUser")
+    public User add(@RequestBody RegistrationRequest request){
 
+       // return this info back to client, so client will receive as json
        return userService.add(request);
-    }*/
+    }
 }

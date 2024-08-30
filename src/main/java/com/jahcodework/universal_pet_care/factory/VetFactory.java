@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+// service - specialized component
 @Service
 @RequiredArgsConstructor
 public class VetFactory {
@@ -22,6 +23,6 @@ public class VetFactory {
         userattrmapper.setCommonAttributes(rr, veter);
         veter.setSpecialization(rr.getSpecialization());
 
-        return vetrepo.save(veter);
+        return vetrepo.save(veter); //save to the Vet table not the user table
     }
 }

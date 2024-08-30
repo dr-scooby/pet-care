@@ -24,6 +24,7 @@ public class SimpleUserFactory implements UserFactory{
     @Override
     public User createUser(RegistrationRequest rr) {
 
+        // check if email exists, can only have 1 unique email
         if(userrepo.existsByEmail(rr.getEmail()) ){
             throw new UserAlreadyExistsException("oops! " + rr.getEmail() + " already exists");
         }
