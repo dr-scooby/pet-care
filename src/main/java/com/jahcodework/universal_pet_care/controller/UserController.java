@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.http.HttpStatus.CONFLICT;
+
 // localhost:9192/pet-care
 @RequiredArgsConstructor
 @RequestMapping("/pet-care")
@@ -45,7 +47,8 @@ public class UserController {
             return ResponseEntity.ok(new ApiResponse("User registered successfully", registerdUser));
 
         }catch(UserAlreadyExistsException e){
-            return ResponseEntity.ok(new ApiResponse(e.getMessage(), null));
+            //return ResponseEntity.ok(new ApiResponse(e.getMessage(), null)); // ok is response 200 ok to client
+            return ResponseEntity.status(CONFLICT).body(new ApiResponse(e.getMessage(), null));
         }
     }
 
