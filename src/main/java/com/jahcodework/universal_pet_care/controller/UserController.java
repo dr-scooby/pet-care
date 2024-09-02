@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.http.HttpStatus.CONFLICT;
+import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 // localhost:9192/pet-care
 @RequiredArgsConstructor
@@ -49,6 +50,9 @@ public class UserController {
         }catch(UserAlreadyExistsException e){
             //return ResponseEntity.ok(new ApiResponse(e.getMessage(), null)); // ok is response 200 ok to client
             return ResponseEntity.status(CONFLICT).body(new ApiResponse(e.getMessage(), null));
+        }catch(Exception e){
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
+
         }
     }
 
