@@ -6,4 +6,6 @@ public class FeedBackMessage {
 
     public static final String UPDATE_SUCCESS = "User updated Successfully";
 
+    public static final String NOT_FOUND = "User Not Found in DB, you punk!!!";
+
 }

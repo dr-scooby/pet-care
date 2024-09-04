@@ -6,6 +6,7 @@ import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.UserRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import com.jahcodework.universal_pet_care.request.UserUpdatedRequest;
+import com.jahcodework.universal_pet_care.utils.FeedBackMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +48,6 @@ public class UserService implements IUserService{
 
     @Override
     public User findById(Long userid) {
-        return userrepo.findById(userid).orElseThrow(() -> new UserNotFoundException("User not found"));
+        return userrepo.findById(userid).orElseThrow(() -> new UserNotFoundException(FeedBackMessage.NOT_FOUND));
     }
 }
