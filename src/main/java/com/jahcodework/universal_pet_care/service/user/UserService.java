@@ -6,17 +6,17 @@ import com.jahcodework.universal_pet_care.repository.UserRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserService implements IUserService{
 
     private final UserRepo userrepo;
 
     private final UserFactory userfactory;
 
 
+    @Override
     public User add(RegistrationRequest register){
 
        return userfactory.createUser(register);
