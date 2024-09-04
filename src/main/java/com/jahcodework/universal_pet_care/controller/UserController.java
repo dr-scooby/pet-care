@@ -7,6 +7,7 @@ import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
 import com.jahcodework.universal_pet_care.response.ApiResponse;
 import com.jahcodework.universal_pet_care.service.user.UserService;
+import com.jahcodework.universal_pet_care.utils.FeedBackMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +46,7 @@ public class UserController {
             User auser = userService.add(request);
             UserDTO registerdUser = entityConverter.mapEntityToDto(auser, UserDTO.class);
 
-            return ResponseEntity.ok(new ApiResponse("User registered successfully", registerdUser));
+            return ResponseEntity.ok(new ApiResponse(FeedBackMessage.SUCCESS, registerdUser));
 
         }catch(UserAlreadyExistsException e){
             //return ResponseEntity.ok(new ApiResponse(e.getMessage(), null)); // ok is response 200 ok to client
