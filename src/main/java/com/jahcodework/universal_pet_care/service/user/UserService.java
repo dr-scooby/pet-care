@@ -4,6 +4,7 @@ import com.jahcodework.universal_pet_care.factory.UserFactory;
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.UserRepo;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
+import com.jahcodework.universal_pet_care.request.UserUpdatedRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,11 @@ public class UserService implements IUserService{
     public void add(User auser){
         userrepo.save(auser);
 
+    }
+
+
+    public User update(Long userid, UserUpdatedRequest userrequest){
+
+        return null;
     }
 }
