@@ -45,6 +45,7 @@ public class UserService implements IUserService{
         return userrepo.save(auser);
     }
 
+    @Override
     public User findById(Long userid) {
         return userrepo.findById(userid).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
