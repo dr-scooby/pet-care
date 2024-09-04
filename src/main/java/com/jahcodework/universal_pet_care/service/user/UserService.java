@@ -1,5 +1,6 @@
 package com.jahcodework.universal_pet_care.service.user;
 
+import com.jahcodework.universal_pet_care.exception.UserNotFoundException;
 import com.jahcodework.universal_pet_care.factory.UserFactory;
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.UserRepo;
@@ -30,8 +31,21 @@ public class UserService implements IUserService{
     }
 
 
+    @Override
     public User update(Long userid, UserUpdatedRequest userrequest){
 
-        return null;
+        User auser = findById(userid);
+        auser.setFirstName(userrequest.getFirstName());
+        auser.setLastName(userrequest.getLastName());
+        auser.setPhoneNumber(userrequest.getPhoneNumber());
+        auser.setGender(userrequest.getGender());
+        auser.setSpecialization(userrequest.getSpecialization());
+
+
+        return userrepo.save(auser);
+    }
+
+    public User findById(Long userid) {
+        return userrepo.findById(userid).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 }

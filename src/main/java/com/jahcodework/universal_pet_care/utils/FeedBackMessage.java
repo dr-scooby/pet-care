@@ -4,5 +4,6 @@ public class FeedBackMessage {
 
     public static final String SUCCESS = "User created Successfully";
 
+    public static final String UPDATE_SUCCESS = "User updated Successfully";
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class UserUpdatedRequest {
 
-    // only allowed to changed the following fields:
+    // only allowed to change the following fields:
     private String firstName;
     private String lastName;
     private String gender;

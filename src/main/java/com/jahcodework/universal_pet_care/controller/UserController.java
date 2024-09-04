@@ -3,20 +3,18 @@ package com.jahcodework.universal_pet_care.controller;
 import com.jahcodework.universal_pet_care.dto.EntityConverter;
 import com.jahcodework.universal_pet_care.dto.UserDTO;
 import com.jahcodework.universal_pet_care.exception.UserAlreadyExistsException;
+import com.jahcodework.universal_pet_care.exception.UserNotFoundException;
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.request.RegistrationRequest;
+import com.jahcodework.universal_pet_care.request.UserUpdatedRequest;
 import com.jahcodework.universal_pet_care.response.ApiResponse;
 import com.jahcodework.universal_pet_care.service.user.UserService;
 import com.jahcodework.universal_pet_care.utils.FeedBackMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.CONFLICT;
-import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
+import static org.springframework.http.HttpStatus.*;
 
 // localhost:9192/pet-care
 @RequiredArgsConstructor
@@ -64,4 +62,24 @@ public class UserController {
        // return this info back to client, so client will receive as json
        return userService.add(request);
     }
+
+
+
+    @PutMapping("/update/{userid}")
+    public ResponseEntity<ApiResponse> updateUser(@PathVariable Long userid,@RequestBody UserUpdatedRequest request){
+        try{
+            System.out.println("Updating user: " + request.getFirstName() + " " + request.getLastName() );
+
+            User theuser = userService.update(userid, request);
+            UserDTO updateduser = entityConverter.mapEntityToDto(theuser, UserDTO.class);
+            return ResponseEntity.ok(new ApiResponse(FeedBackMessage.UPDATE_SUCCESS, updateduser));
+        }catch(UserNotFoundException e){
+            return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
+
+        }catch(Exception e){
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
+
+        }
+    }
+
 }
