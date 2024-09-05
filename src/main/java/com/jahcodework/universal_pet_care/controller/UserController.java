@@ -14,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static org.springframework.http.HttpStatus.*;
 
 // localhost:9192/pet-care
@@ -111,6 +113,14 @@ public class UserController {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse(e.getMessage(), null));
 
         }
+    }
+
+
+
+    @GetMapping("/getallusers")
+    public ResponseEntity<ApiResponse> getAllUsers(){
+        List<UserDTO> theusers = userService.getAllUsers();
+        return ResponseEntity.ok(new ApiResponse(FeedBackMessage.ALL_USERS, theusers));
     }
 
 }

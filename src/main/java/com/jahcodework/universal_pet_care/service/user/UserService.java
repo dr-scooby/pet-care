@@ -1,5 +1,7 @@
 package com.jahcodework.universal_pet_care.service.user;
 
+import com.jahcodework.universal_pet_care.dto.EntityConverter;
+import com.jahcodework.universal_pet_care.dto.UserDTO;
 import com.jahcodework.universal_pet_care.exception.UserNotFoundException;
 import com.jahcodework.universal_pet_care.factory.UserFactory;
 import com.jahcodework.universal_pet_care.model.User;
@@ -10,6 +12,9 @@ import com.jahcodework.universal_pet_care.utils.FeedBackMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class UserService implements IUserService{
@@ -17,6 +22,8 @@ public class UserService implements IUserService{
     private final UserRepo userrepo;
 
     private final UserFactory userfactory;
+
+    private final EntityConverter<User, UserDTO> entityConverter;
 
 
     @Override
@@ -56,5 +63,12 @@ public class UserService implements IUserService{
         userrepo.findById(userid).ifPresentOrElse(userrepo :: delete, () -> {
             throw new UserNotFoundException("User not found");
         });
+    }
+
+
+    @Override
+    public List<UserDTO> getAllUsers(){
+        List<User> users = userrepo.findAll();
+        return users.stream().map(user -> entityConverter.mapEntityToDto(user, UserDTO.class)).collect(Collectors.toList());
     }
 }

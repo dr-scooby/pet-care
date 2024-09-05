@@ -12,4 +12,6 @@ public class FeedBackMessage {
 
     public static final String FOUND = "User is Found in DB, now get lost punk!!!";
 
+    public static final String ALL_USERS = "Found All user listing, now bugger off punk!";
+
 }
