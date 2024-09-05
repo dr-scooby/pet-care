@@ -8,4 +8,6 @@ public class FeedBackMessage {
 
     public static final String NOT_FOUND = "User Not Found in DB, you punk!!!";
 
+    public static final String FOUND = "User is Found in DB, now get lost punk!!!";
+
 }
