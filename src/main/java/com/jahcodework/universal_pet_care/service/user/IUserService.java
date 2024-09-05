@@ -10,4 +10,6 @@ public interface IUserService {
     User update(Long userid, UserUpdatedRequest userrequest);
 
     User findById(Long userid);
+
+    void delete(Long userid);
 }
