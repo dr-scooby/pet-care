@@ -90,8 +90,8 @@ public class UserController {
 
         try{
             User auser = userService.findById(userid);
-            UserDTO deleteduser = entityConverter.mapEntityToDto(auser, UserDTO.class);
-            return ResponseEntity.ok(new ApiResponse(FeedBackMessage.FOUND, deleteduser));
+            UserDTO userdto = entityConverter.mapEntityToDto(auser, UserDTO.class);
+            return ResponseEntity.ok(new ApiResponse(FeedBackMessage.FOUND, userdto));
         }catch(UserNotFoundException e){
             return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
         }catch(Exception e){
