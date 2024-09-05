@@ -61,7 +61,7 @@ public class UserService implements IUserService{
     @Override
     public void delete(Long userid){
         userrepo.findById(userid).ifPresentOrElse(userrepo :: delete, () -> {
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException(FeedBackMessage.NOT_FOUND);
         });
     }
 
