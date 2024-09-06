@@ -10,6 +10,7 @@ import com.jahcodework.universal_pet_care.request.UserUpdatedRequest;
 import com.jahcodework.universal_pet_care.response.ApiResponse;
 import com.jahcodework.universal_pet_care.service.user.UserService;
 import com.jahcodework.universal_pet_care.utils.FeedBackMessage;
+import com.jahcodework.universal_pet_care.utils.UrlMapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +39,7 @@ public class UserController {
 
 
     //localhost:9192/pet-care/addNewUser
-    @PostMapping("/addNewUser")
+    @PostMapping(UrlMapping.ADDNEWUSER)
     public ResponseEntity<ApiResponse> addNewUser(@RequestBody RegistrationRequest request){
 
         try{
