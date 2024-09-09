@@ -1,7 +1,9 @@
 package com.jahcodework.universal_pet_care.utils;
 
+// url mapping starts with: //localhost:9192/pet-care/api/v1
 public class UrlMapping {
 
+    //localhost:9192/pet-care/api/v1
     public static final String API = "/api/v1";
 
     // //localhost:9192/pet-care/api/v1/addNewUser
@@ -13,4 +15,7 @@ public class UrlMapping {
 
     // find user by id. "/user/{userid}"
     public static final String FIND_USER_BY_ID = API+"/finduserbyid/{userid}";
+
+    // delete user by id
+    public static final String DELETE_USER_BY_ID = API+"/deleteuser/{userid}";
 }

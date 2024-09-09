@@ -102,7 +102,7 @@ public class UserController {
     }
 
 
-    @DeleteMapping("/deleteuser/{userid}")
+    @DeleteMapping(UrlMapping.DELETE_USER_BY_ID)
     public ResponseEntity<ApiResponse> deleteById(@PathVariable Long userid){
 
         try{
