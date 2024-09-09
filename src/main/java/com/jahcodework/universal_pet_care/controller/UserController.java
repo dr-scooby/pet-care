@@ -86,7 +86,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/user/{userid}")
+    @GetMapping(UrlMapping.FIND_USER_BY_ID)
     public ResponseEntity<ApiResponse> findById(@PathVariable Long userid){
 
         try{
