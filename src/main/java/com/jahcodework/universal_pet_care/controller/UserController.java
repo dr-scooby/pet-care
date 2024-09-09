@@ -86,6 +86,7 @@ public class UserController {
     }
 
 
+    // localhost:9192/pet-care/api/v1/finduserbyid/{userid}
     @GetMapping(UrlMapping.FIND_USER_BY_ID)
     public ResponseEntity<ApiResponse> findById(@PathVariable Long userid){
 
@@ -102,6 +103,7 @@ public class UserController {
     }
 
 
+    // localhost:9192/pet-care/api/v1/deleteuser/{userid}
     @DeleteMapping(UrlMapping.DELETE_USER_BY_ID)
     public ResponseEntity<ApiResponse> deleteById(@PathVariable Long userid){
 
@@ -118,7 +120,8 @@ public class UserController {
 
 
 
-    @GetMapping("/getallusers")
+    // localhost:9192/pet-care/api/v1/getallusers
+    @GetMapping(UrlMapping.GET_ALL_USERS)
     public ResponseEntity<ApiResponse> getAllUsers(){
         List<UserDTO> theusers = userService.getAllUsers();
         return ResponseEntity.ok(new ApiResponse(FeedBackMessage.ALL_USERS, theusers));
