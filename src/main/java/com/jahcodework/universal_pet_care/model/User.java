@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 /*
  @MappedSuperclass:
   in hibernate this annotation is actually used to define a class as a superclass.
@@ -43,6 +45,11 @@ public class User {
 
     @Transient
     private String specialization; // for Vet only, do not save to user table, use Transient for this.
+
+    // do not save to user table, use Transient for this.
+    @Transient
+    private List<Appointment> appointments;
+
 
     @Override
     public String toString() {
