@@ -39,6 +39,8 @@ public class Appointment {
 
 
 
+    // video # 78
+    // add user to the appointments
     public void addPatient(User sender){
         this.patient = sender;
         if(sender.getAppointments() == null){
@@ -46,5 +48,16 @@ public class Appointment {
         }
 
         sender.getAppointments().add(this);
+    }
+
+    // add Vet to the appointments
+    public void addVetAppt(User avet){
+        this.theVet = avet;
+
+        if(avet.getAppointments() == null){
+            avet.setAppointments(new ArrayList<>());
+        }
+
+        avet.getAppointments().add(this);
     }
 }
