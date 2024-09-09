@@ -68,7 +68,7 @@ public class UserController {
 
 
 
-    @PutMapping("/update/{userid}")
+    @PutMapping(UrlMapping.UPDATE_USER)
     public ResponseEntity<ApiResponse> updateUser(@PathVariable Long userid,@RequestBody UserUpdatedRequest request){
         try{
             System.out.println("Updating user: " + request.getFirstName() + " " + request.getLastName() );

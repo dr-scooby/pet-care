@@ -6,4 +6,7 @@ public class UrlMapping {
 
     // //localhost:9192/pet-care/api/v1/addNewUser
     public static final String ADDNEWUSER = API+"/addNewUser";
+
+    // "/update/{userid}"
+    public static final String UPDATE_USER = API+"/update/{userid}";
 }
