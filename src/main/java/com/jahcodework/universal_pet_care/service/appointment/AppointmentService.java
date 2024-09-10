@@ -6,7 +6,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+/*
 
+ Appointment states:
+ approved
+ not-approved
+ on-going
+ cancelled
+ waiting-for-approval
+ */
 // make it a Spring Bean using @Service
 @Service
 @RequiredArgsConstructor
