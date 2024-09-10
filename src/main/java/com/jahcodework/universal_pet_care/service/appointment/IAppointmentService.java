@@ -12,4 +12,6 @@ public interface IAppointmentService {
     List<Appointment> getAllAppointments();
 
     Appointment updateAppointment(Long id, AppointmentRequest apptrequest);
+
+    void deleteAppointment(Long id);
 }
