@@ -31,7 +31,9 @@ public class AppointmentService implements IAppointmentService{
 
     @Override
     public Appointment createAppointment(Appointment appt, Long senderid, Long recipientid) {
-       Optional<User> sender =userrepo.findById(senderid);
+        Optional<User> sender =userrepo.findById(senderid);
+        Optional<User> recipient =userrepo.findById(recipientid);
+
 
         return null;
     }
