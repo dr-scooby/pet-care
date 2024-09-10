@@ -9,7 +9,9 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Random;
 
+// video # 78
 
 @Entity
 @Getter
@@ -29,11 +31,11 @@ public class Appointment {
     private String appointmentNo;
     private LocalDate createdAt; // when this first created
 
-    @Column(name="sender")
+    @JoinColumn(name="sender")
     @ManyToOne(fetch = FetchType.LAZY)
-    private User patient;  // the originator
+    private User patient;  // the originator, the patient the customer the client
 
-    @Column(name="recipient")
+    @JoinColumn(name="recipient")
     @ManyToOne(fetch = FetchType.LAZY)
     private User theVet; // the target of the appointment
 
@@ -59,5 +61,12 @@ public class Appointment {
         }
 
         avet.getAppointments().add(this);
+    }
+
+
+    // generate the appointmentNo
+    public void setAppointmentNo(){
+        // 100 numbers, random - testing for now
+        this.appointmentNo = String.valueOf(new Random().nextLong()).substring(1,101);
     }
 }
