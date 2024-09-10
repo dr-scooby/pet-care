@@ -14,4 +14,8 @@ public interface IAppointmentService {
     Appointment updateAppointment(Long id, AppointmentRequest apptrequest);
 
     void deleteAppointment(Long id);
+
+    Appointment getAppointmentById(Long id);
+
+    Appointment getAppointmentByNo(String appointmentNo);
 }
