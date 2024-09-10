@@ -34,6 +34,9 @@ public class AppointmentService implements IAppointmentService{
         Optional<User> sender =userrepo.findById(senderid);
         Optional<User> recipient =userrepo.findById(recipientid);
 
+        if(sender.isPresent() && recipient.isPresent()){
+            appt.setPatient(sender.get());
+        }
 
         return null;
     }
