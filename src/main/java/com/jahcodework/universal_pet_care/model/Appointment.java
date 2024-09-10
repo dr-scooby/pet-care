@@ -1,5 +1,6 @@
 package com.jahcodework.universal_pet_care.model;
 
+import com.jahcodework.universal_pet_care.enumms.AppointmentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +13,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 // video # 78
+/*
+video # 80
+ Appointment states:
+ approved
+ not-approved
+ on-going
+ cancelled
+ waiting-for-approval
+ */
 
 @Entity
 @Getter
@@ -39,6 +49,8 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.LAZY)
     private User theVet; // the target of the appointment
 
+    @Enumerated(EnumType.STRING)
+    private AppointmentStatus status;
 
 
     // video # 78

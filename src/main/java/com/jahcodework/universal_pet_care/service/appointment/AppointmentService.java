@@ -19,8 +19,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AppointmentService implements IAppointmentService{
+
+
     @Override
-    public Appointment createAppointment(Appointment appt, Long sender, Long recipient) {
+    public Appointment createAppointment(Appointment appt, Long senderid, Long recipientid) {
         return null;
     }
 
