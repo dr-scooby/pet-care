@@ -44,12 +44,12 @@ public class AppointmentService implements IAppointmentService{
             return apptrepo.save(appt);
         }
 
-        throw new ResourceNotFoundException("No such appointment");
+        throw new ResourceNotFoundException("Sender or Recipient not found");
     }
 
     @Override
     public List<Appointment> getAllAppointments() {
-        return null;
+        return apptrepo.findAll();
     }
 
     @Override
@@ -59,6 +59,7 @@ public class AppointmentService implements IAppointmentService{
 
     @Override
     public void deleteAppointment(Long id) {
+        apptrepo.findById(id).ifPresent(appointment -> {apptrepo.delete(appointment);});
 
     }
 
