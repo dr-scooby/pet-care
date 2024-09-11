@@ -36,6 +36,8 @@ public class AppointmentService implements IAppointmentService{
 
         if(sender.isPresent() && recipient.isPresent()){
             appt.setPatient(sender.get());
+            appt.setTheVet(recipient.get());
+            appt.setAppointmentNo();
         }
 
         return null;
