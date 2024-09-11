@@ -65,7 +65,7 @@ public class Appointment {
     }
 
     // add Vet to the appointments
-    public void addVetAppt(User avet){
+    public void addVet(User avet){
         this.theVet = avet;
 
         if(avet.getAppointments() == null){
