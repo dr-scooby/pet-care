@@ -1,5 +1,7 @@
 package com.jahcodework.universal_pet_care.service.appointment;
 
+import com.jahcodework.universal_pet_care.enumms.AppointmentStatus;
+import com.jahcodework.universal_pet_care.exception.ResourceNotFoundException;
 import com.jahcodework.universal_pet_care.model.Appointment;
 import com.jahcodework.universal_pet_care.model.User;
 import com.jahcodework.universal_pet_care.repository.AppointmentRepo;
@@ -38,9 +40,11 @@ public class AppointmentService implements IAppointmentService{
             appt.setPatient(sender.get());
             appt.setTheVet(recipient.get());
             appt.setAppointmentNo();
+            appt.setStatus(AppointmentStatus.WAITING_FOR_APPROVAL);
+            return apptrepo.save(appt);
         }
 
-        return null;
+        throw new ResourceNotFoundException("No such appointment");
     }
 
     @Override
