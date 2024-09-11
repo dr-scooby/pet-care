@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /*
@@ -54,14 +55,22 @@ public class AppointmentService implements IAppointmentService{
 
     @Override
     public Appointment updateAppointment(Long id, AppointmentRequest apptrequest) {
+        Appointment existingappointment = getAppointmentById(id);
+
+        if( !Objects.equals(existingappointment.getStatus(), AppointmentStatus.WAITING_FOR_APPROVAL)){
+
+        }
+
         return null;
     }
 
     // video #81, timestamp 6:00
     @Override
     public void deleteAppointment(Long id) {
-        apptrepo.findById(id).ifPresent(appointment -> {apptrepo.delete(appointment);});
-
+        // video # 82 timestamp 2:56
+        // or: apptrepo.findById(id).ifPresentOrElse(apptrepo::delete, ()->{throw new ResourceNotFoundException("Appointment not found")});
+        //apptrepo.findById(id).ifPresentOrElse(appointment -> {apptrepo.delete(appointment);}, throw new ResourceNotFoundException("Appointment not found"));
+        apptrepo.findById(id).ifPresentOrElse(apptrepo::delete, ()->{throw new ResourceNotFoundException("Appointment not found");});
     }
 
     @Override
