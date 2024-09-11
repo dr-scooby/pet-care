@@ -57,6 +57,7 @@ public class AppointmentService implements IAppointmentService{
         return null;
     }
 
+    // video #81, timestamp 6:00
     @Override
     public void deleteAppointment(Long id) {
         apptrepo.findById(id).ifPresent(appointment -> {apptrepo.delete(appointment);});
@@ -65,11 +66,12 @@ public class AppointmentService implements IAppointmentService{
 
     @Override
     public Appointment getAppointmentById(Long id) {
-        return null;
+
+        return apptrepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("appointment not found"));
     }
 
     @Override
     public Appointment getAppointmentByNo(String appointmentNo) {
-        return null;
+        return apptrepo.findByAppointmentNo(appointmentNo);
     }
 }
